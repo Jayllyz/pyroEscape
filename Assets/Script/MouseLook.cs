@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MouseLookScript : MonoBehaviour
+public class MouseLook : MonoBehaviour
 {
     public Transform body;
     public Transform head;
