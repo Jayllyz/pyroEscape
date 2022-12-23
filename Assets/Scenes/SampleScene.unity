@@ -1158,7 +1158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db634cfc0bab7b64aa5bf372a4c17c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pr: {fileID: 0}
+  pr: {fileID: 1813124442}
   tr: {fileID: 1813124441}
   propulsionForce: 10
   walkForce: 10
