@@ -5,7 +5,6 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Movement")]
     public float moveSpeed;
 
     public float groundDrag;
