@@ -701,7 +701,7 @@ GameObject:
   - component: {fileID: 1315392041}
   - component: {fileID: 1315392040}
   - component: {fileID: 1315392039}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1160,5 +1160,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pr: {fileID: 1813124442}
   tr: {fileID: 1813124441}
-  propulsionForce: 10
+  propulsionForce: 15
   walkForce: 10
+  maxSpeed: 15
+  groundDrag: 5
+  playerHeight: 2
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
