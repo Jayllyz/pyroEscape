@@ -6,7 +6,7 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
-
+    
     public float groundDrag;
 
     public float jumpForce;
@@ -20,6 +20,14 @@ public class PlayerMovement : MonoBehaviour
     public float playerHeight;
     public LayerMask whatIsGround;
     bool grounded;
+
+    public Transform respawn;
+    public LayerMask whatIsLava;
+    bool dead;
+    
+    public float bumperForce;
+    public LayerMask whatIsBumper;
+    bool touchBumper;
 
     public Transform orientation;
 
@@ -42,7 +50,9 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
-
+        dead = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsLava);
+        touchBumper = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsBumper);
+        
         MyInput();
         SpeedControl();
         
@@ -50,6 +60,11 @@ public class PlayerMovement : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = 0;
+        if (dead)
+            rb.position = respawn.position;
+        if (touchBumper)
+            Bumper();
+            
     }
 
     private void FixedUpdate()
@@ -102,7 +117,6 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
     private void ResetJump()
@@ -118,5 +132,10 @@ public class PlayerMovement : MonoBehaviour
     private void ResetFire()
     {
         readyToFire = true;
+    }
+
+    private void Bumper()
+    {
+        rb.AddForce(transform.up * bumperForce, ForceMode.Impulse);
     }
 }
