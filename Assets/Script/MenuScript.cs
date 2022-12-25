@@ -23,6 +23,7 @@ public class MenuScript : MonoBehaviour
     {
         mainMenuRoot.SetActive(false);
         StartCoroutine(DelayStartGame());
+        Cursor.visible = false;
     }
 
     private IEnumerator DelayStartGame()
