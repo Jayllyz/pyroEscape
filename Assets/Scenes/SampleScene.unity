@@ -155,8 +155,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7135275925706962136, guid: 7cbd6bfe21a542f4eb05fdb88ac96952, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1332635124}
+    - target: {fileID: 7135275925706962136, guid: 7cbd6bfe21a542f4eb05fdb88ac96952, type: 3}
       propertyPath: m_RenderMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135275925706962136, guid: 7cbd6bfe21a542f4eb05fdb88ac96952, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135275925706962137, guid: 7cbd6bfe21a542f4eb05fdb88ac96952, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7135275925706962139, guid: 7cbd6bfe21a542f4eb05fdb88ac96952, type: 3}
       propertyPath: m_Pivot.x
@@ -192,6 +204,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7135275925706962139, guid: 7cbd6bfe21a542f4eb05fdb88ac96952, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135275925706962139, guid: 7cbd6bfe21a542f4eb05fdb88ac96952, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135275925706962139, guid: 7cbd6bfe21a542f4eb05fdb88ac96952, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135275925706962139, guid: 7cbd6bfe21a542f4eb05fdb88ac96952, type: 3}
+      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7135275925706962139, guid: 7cbd6bfe21a542f4eb05fdb88ac96952, type: 3}
@@ -904,6 +928,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &1332635124 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8300673144102791877, guid: 1ab34810129723848bbf7b5c4a680b60, type: 3}
+  m_PrefabInstance: {fileID: 8722656696195814065}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1348779388 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6111962034776852097, guid: c43a17d41a7b9494b835e5d16fd88376, type: 3}
