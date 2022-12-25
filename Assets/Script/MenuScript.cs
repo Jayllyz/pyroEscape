@@ -10,7 +10,6 @@ public class MenuScript : MonoBehaviour
     public GameObject mainMenuRoot;
     public Button startGameButton;
     public Button quitGameButton;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +22,7 @@ public class MenuScript : MonoBehaviour
     {
         mainMenuRoot.SetActive(false);
         StartCoroutine(DelayStartGame());
+        Cursor.visible = false;
     }
 
     private IEnumerator DelayStartGame()
