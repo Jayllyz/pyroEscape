@@ -216,6 +216,14 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
+  respawn: {fileID: 0}
+  whatIsLava:
+    serializedVersion: 2
+    m_Bits: 0
+  bumperForce: 0
+  whatIsBumper:
+    serializedVersion: 2
+    m_Bits: 0
   orientation: {fileID: 8300673142760054797}
 --- !u!1 &8300673144102791879
 GameObject:

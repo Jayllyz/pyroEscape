@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -21,13 +22,16 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatIsGround;
     bool grounded;
 
-    public Transform respawn;
+    public Transform respawnPad;
     public LayerMask whatIsLava;
     bool dead;
     
     public float bumperForce;
     public LayerMask whatIsBumper;
     bool touchBumper;
+    
+    public LayerMask whatIsFinish;
+    bool finished;
 
     public Transform orientation;
 
@@ -52,7 +56,8 @@ public class PlayerMovement : MonoBehaviour
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
         dead = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsLava);
         touchBumper = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsBumper);
-        
+        finished = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsFinish);
+
         MyInput();
         SpeedControl();
         
@@ -61,10 +66,13 @@ public class PlayerMovement : MonoBehaviour
         else
             rb.drag = 0;
         if (dead)
-            rb.position = respawn.position;
+            respawn();
+
         if (touchBumper)
             Bumper();
-            
+
+        if (finished)
+            SceneManager.LoadScene("TowerLevel");
     }
 
     private void FixedUpdate()
@@ -137,5 +145,12 @@ public class PlayerMovement : MonoBehaviour
     private void Bumper()
     {
         rb.AddForce(transform.up * bumperForce, ForceMode.Impulse);
+    }
+
+    private void respawn()
+    {
+        Vector3 targetPosition = respawnPad.position;
+        targetPosition.y += 2;
+        rb.position = targetPosition;
     }
 }
