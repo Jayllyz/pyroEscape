@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatIsGround;
     bool grounded;
 
-    public Transform respawn;
+    public Transform respawnPad;
     public LayerMask whatIsLava;
     bool dead;
     
@@ -61,7 +61,10 @@ public class PlayerMovement : MonoBehaviour
         else
             rb.drag = 0;
         if (dead)
-            rb.position = respawn.position;
+        {
+            respawn();
+        }
+            
         if (touchBumper)
             Bumper();
             
@@ -137,5 +140,12 @@ public class PlayerMovement : MonoBehaviour
     private void Bumper()
     {
         rb.AddForce(transform.up * bumperForce, ForceMode.Impulse);
+    }
+
+    private void respawn()
+    {
+        Vector3 targetPosition = respawnPad.position;
+        targetPosition.y += 2;
+        rb.position = targetPosition;
     }
 }
