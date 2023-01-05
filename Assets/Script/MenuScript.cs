@@ -1,9 +1,9 @@
 using System.Collections;
 using UnityEditor;
 using UnityEngine.UI;
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
 using UnityEngine;
-#endif
+//#endif
 
 public class MenuScript : MonoBehaviour
 {
