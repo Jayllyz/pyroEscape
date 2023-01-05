@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
@@ -35,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform orientation;
 
+    public Transform lava;
+        
     float horizontalInput;
     float verticalInput;
 
@@ -153,6 +156,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 targetPosition = respawnPad.position;
         targetPosition.y += 2;
+        lava.position = new Vector3(lava.position.x,0,lava.position.z);
         rb.position = targetPosition;
     }
 }
