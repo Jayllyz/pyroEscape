@@ -66,8 +66,10 @@ public class PlayerMovement : MonoBehaviour
         else
             rb.drag = 0;
         if (dead)
+        {
             respawn();
-
+        }
+            
         if (touchBumper)
             Bumper();
 
