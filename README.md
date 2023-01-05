@@ -19,6 +19,7 @@ Introduction project to learn and discover Unity, the goal is to escape a tower 
 
 - <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> to move (editable in unity input controllers)
 - Left click to shoot
+- <kbd>Space</kbd> to jump
 
 ## Contributors
 
