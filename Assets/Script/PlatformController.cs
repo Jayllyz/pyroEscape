@@ -29,7 +29,7 @@ public class PlatformController : MonoBehaviour
         
 
         // Vérifie si la plateforme a atteint la distance maximale de déplacement
-        if (Mathf.Abs(transform.position.x - startPosition.x) >= distance)
+        if (Mathf.Abs(transform.position.x - startPosition.x) == distance)
         {
             // Inverse la direction de déplacement de la plateforme
             direction *= -1;
