@@ -33,10 +33,14 @@ public class PlayerMovement : MonoBehaviour
     
     public LayerMask whatIsFinish;
     bool finished;
+    
+    public LayerMask end;
+    bool endGame;
 
     public Transform orientation;
 
     public Transform lava;
+    public Transform text;
         
     float horizontalInput;
     float verticalInput;
@@ -60,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         dead = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsLava);
         touchBumper = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsBumper);
         finished = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsFinish);
+        endGame = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, end);
 
         MyInput();
         SpeedControl();
@@ -68,16 +73,21 @@ public class PlayerMovement : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = 0;
+
         if (dead)
-        {
             respawn();
-        }
             
         if (touchBumper)
             Bumper();
 
         if (finished)
             SceneManager.LoadScene("TowerLevel");
+
+        if(endGame)
+        {
+            text.gameObject.SetActive(true);
+            Invoke("DisableText", 5);
+        }
     }
 
     private void FixedUpdate()
@@ -111,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
         
         if(grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-        else if(!grounded)
+        else
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
     }
 
@@ -158,5 +168,10 @@ public class PlayerMovement : MonoBehaviour
         targetPosition.y += 2;
         lava.position = new Vector3(lava.position.x,0,lava.position.z);
         rb.position = targetPosition;
+    }
+
+    private void DisableText()
+    {
+        text.gameObject.SetActive(false);
     }
 }

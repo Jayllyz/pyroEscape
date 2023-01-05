@@ -154,6 +154,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7135275924501992320, guid: 7cbd6bfe21a542f4eb05fdb88ac96952, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135275924501992320, guid: 7cbd6bfe21a542f4eb05fdb88ac96952, type: 3}
+      propertyPath: m_fontSize
+      value: 315.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135275924501992323, guid: 7cbd6bfe21a542f4eb05fdb88ac96952, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135275924501992326, guid: 7cbd6bfe21a542f4eb05fdb88ac96952, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7135275925706962136, guid: 7cbd6bfe21a542f4eb05fdb88ac96952, type: 3}
       propertyPath: m_Camera
       value: 

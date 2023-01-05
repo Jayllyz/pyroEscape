@@ -8,7 +8,7 @@ public class LavaPlatform : MonoBehaviour
     public float riseSpeed = 1.0f;
 
     // La hauteur maximale à laquelle la plateforme peut monter
-    public float maxHeight = 10.0f;
+    public float maxHeight = 100.0f;
 
     void Update()
     {
